@@ -1,4 +1,4 @@
-app.controller("gamesController", ['$scope', '$http', function ($scope, $http) {
+app.controller("gamesController", ['$scope', '$http', '$animate', function ($scope, $http, $animate) {
  	var self = this;
  	var menu = $scope.menu;
 	self.game = null;
@@ -12,6 +12,18 @@ app.controller("gamesController", ['$scope', '$http', function ($scope, $http) {
 	self.waitingForOp = false;
 	self.opResolvingSeven = false;
 	self.gameCount = 0;
+
+	// Animation Variables
+	self.pointsToScrap = [];
+	// Animation handlers
+	console.log($animate);
+	$animate.on('enter', document.getElementById('pointsToScrapWrapper'), function (el, phase) {
+		console.log("Animating element: " + phase);
+		console.log(el[0]);
+		el[0].classList.add('animatingPointsToScrap');
+	});
+
+
 	//DEVELOPMENT ONLY - REMOVE IN PRODUCTION
 	self.showDeck = false;
 
@@ -406,6 +418,25 @@ app.controller("gamesController", ['$scope', '$http', function ($scope, $http) {
 		console.log(obj)
 		switch (obj.verb) {
 			case 'updated':
+
+
+			// ANIMATE CHANGES
+				if (obj.data.change != "Initialize") {
+					self.player.points.forEach(function (point) {
+						if (obj.data.game.players[self.pNum].points.indexOf(point) < 0) self.pointsToScrap.push(point);
+					});
+				}
+
+
+
+
+
+
+
+
+
+
+
 				self.game = obj.data.game;
 				console.log(self.game);
 				console.log("pNum: " + self.pNum);

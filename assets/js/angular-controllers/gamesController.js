@@ -14,13 +14,21 @@ app.controller("gamesController", ['$scope', '$http', '$animate', function ($sco
 	self.gameCount = 0;
 
 	// Animation Variables
-	self.pointsToScrap = [];
+	self.yourPointsToScrap = [];
+	self.opPointsToScrap = [];
+	self.yourRunesToScrap = [];
+	self.opRunesToScrap = [];
+	self.yourPointsToOpPoints = [];
+	self.opPointsToYourPoints = [];
+	self.yourPointsToHand = [];
+	self.opPointsToHand = [];
+	self.scrapToYourHand = [];
+	self.scrapToOpHand = [];
+
 	// Animation handlers
 	console.log($animate);
 	$animate.on('enter', document.getElementById('pointsToScrapWrapper'), function (el, phase) {
-		console.log("Animating element: " + phase);
-		console.log(el[0]);
-		el[0].classList.add('animatingPointsToScrap');
+		el[0].classList.add('yourPointsToScrap-f');
 	});
 
 
@@ -422,9 +430,15 @@ app.controller("gamesController", ['$scope', '$http', '$animate', function ($sco
 
 			// ANIMATE CHANGES
 				if (obj.data.change != "Initialize") {
-					self.player.points.forEach(function (point) {
-						if (obj.data.game.players[self.pNum].points.indexOf(point) < 0) self.pointsToScrap.push(point);
-					});
+					console.log("checking points moved to scrap");
+					console.log(obj.data.game.players[self.pNum]);
+					self.yourPointsToScrap = _.differenceBy(self.player.points, obj.data.game.players[self.pNum].points, 'id');
+
+					console.log(self.pointsToScrap);
+					// self.player.points.forEach(function (point) {
+					// 	console.log("checking index of " + point.name + " in updated game: " + obj.data.game.players[self.pNum].points.indexOf(point))
+					// 	if (obj.data.game.players[self.pNum].points.indexOf(point) < 0) self.pointsToScrap.push(point);
+					// });
 				}
 
 

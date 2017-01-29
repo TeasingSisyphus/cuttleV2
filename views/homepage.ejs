@@ -202,7 +202,7 @@
                                 <img src="images/deck.jpg" id="deck" ng-click="gc.draw()" draggable="false"></img>
                                 <img src="images/scrap.jpg" id="scrap" ts-droppable allow-drop="gc.dragoverScrap" index="0" upon-drop="gc.dropScrap" draggable="false"></img>
                                 <div id="pointsToScrapWrapper">
-                                    <img ng-repeat="card in gc.pointsToScrap" ng-src="{{card.img}}" class="cardInScrap">
+                                    <img ng-repeat="card in gc.yourPointsToScrap" ng-src="{{card.img}}" class="cardInScrap">
                                 </div>
                                 <p class="yourTurn" ng-if="gc.yourTurn">
                                     Your Turn

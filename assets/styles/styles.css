@@ -276,29 +276,25 @@ body {
               		width: 100%;
               		display: inline-block;
               	}
-              	.cardInScrap {
-	                position: absolute;
+              	.yourPointsToScrap {
+	                position: relative;
 	                z-index: 3;       
 	                left: 200%;
 	                top: 75%;
 	                height: 21%; 
-					transition: height, top, left, 2s linear;
-				    -moz-transition: height, top, left, 2s linear; /* Firefox 4 */
-				    -webkit-transition: height, top, left, 2s linear; /* Safari and Chrome */
-				    -o-transition: height, top, left, 2s, linear; /* Opera */
-				    -ms-transition: height, top, left, 2s, linear; /* Explorer 10 */	                    		
+        					transition: height, top, left, margin-bottom, 2s linear;
+      				    -moz-transition: height, top, left, margin-bottom, 2s linear; /* Firefox 4 */
+      				    -webkit-transition: height, top, left, margin-bottom, 2s linear; /* Safari and Chrome */
+      				    -o-transition: height, top, left, margin-bottom, 2s linear; /* Opera */
+      				    -ms-transition: height, top, left, margin-bottom, 2s linear; /* Explorer 10 */	                    		
               	}
 
-              	.animatingPointsToScrap {
-					 /*transition: background 2s linear;*/
-				    /*-moz-transition: background 2s linear; /* Firefox 4 */*/
-				    /*-webkit-transition: background 2s linear; /* Safari and Chrome */*/
-				    /*-o-transition: background 2s linear; /* Opera */*/
-				    /*-ms-transition: background 2s linear; /* Explorer 10 */*/
-					padding-left: 10px;    
-					height: 44.5%;
-					top: 20%;     
-					left: 3%; 		
+              	.yourPointsToScrap-f {    
+        					height: 44.5%;
+        					top: 20%;     
+        					left: 3%; 		
+                  margin-bottom: -100%;
+                  margin-left: -50%;
               	}
 
           /*Points*/

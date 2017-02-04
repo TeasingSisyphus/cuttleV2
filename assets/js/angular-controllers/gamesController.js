@@ -608,6 +608,9 @@ app.controller("gamesController", ['$scope', '$http', '$animate', function ($sco
 					// obj.data.pNum is the pNum who played the oneOff
 						if (!obj.data.happened) self.waitingForOp = false;
 						switch(obj.data.oneOff.rank) {
+							case 1:
+								self.yourPointsToScrap = _.differenceBy(self.player.points, obj.data.game.players[self.pNum].points, 'id');
+								break;
 							case 3:
 								if (obj.data.happened) {
 									if (obj.data.playedBy === self.player.pNum) {

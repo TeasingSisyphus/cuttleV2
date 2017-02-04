@@ -334,6 +334,20 @@ body {
                         position: relative;
                         height: 100%;
                         width: 25%;
+                        transition: 1s linear all;
+                        -webkit-transition: 1s linear all;
+                      }
+                      .pointCard.ng-leave {
+                        opacity: 1;
+                      }
+                      .pointCard.ng-leave.ng-leave-active {
+                        opacity: 0;
+                      }
+                      .pointCard.ng-enter {
+                        opacity: 0;
+                      }
+                      .pointCard.ng-enter.ng-enter-active {
+                        opacity: 1;
                       }
                       .pointCardImg {
                         display: inline-block;
@@ -576,3 +590,16 @@ body {
           height: 70px;
           margin-left: 2px;
         }
+
+.newGame {
+  transition: 1s linear all;
+  -webkit-transition: 1s linear all;
+}
+
+.newGame.ng-enter {
+  opacity: 0;
+}
+
+.newGame.ng-enter.ng-enter-active {
+  opacity: 1;
+}

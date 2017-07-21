@@ -71,8 +71,46 @@ module.exports = {
 	subscribe: function (req, res) {
 		if (req.body.id) {
 			Game.subscribe(req, req.body.id);
+			// Find User, and clear out their old data, if applicable
+			var promiseUser = userService.findUser({userId: req.session.usr})
+			.then(function clearOldData (player) {
+				//If player was in game, clear out player's game data
+				if (player.pNum === 0 || player.pNum === 1) {
+					console.log("clearing old data");
+					var ids = [];
+					// Remove cards in hand
+					for (i=0; i<player.hand.length; i++) {
+						ids.push(player.hand[i].id);
+					}
+					ids.forEach(function (id) {
+						player.hand.remove(id);
+					});
+					ids = [];
+					// Remove cards in points
+					for (i=0; i<player.points.length; i++) {
+						ids.push(player.points[i].id);
+					}
+					ids.forEach(function (id) {
+						player.points.remove(id);
+					});
+					ids = [];
+					// Remove cards in runes
+					for (i=0;i<player.runes.length; i++) {
+						ids.push(player.runes[i].id)
+					} 
+					ids.forEach(function (id) {
+						player.runes.remove(id);
+					});				
+					delete(player.pNum);
+					player.frozenId = null;
+					delete(req.session.game);
+					delete(req.session.pNum);
+					return userService.saveUser({user: player});
+				} else {
+					return Promise.resolve(player);
+				}
+			});
 			var promiseGame = gameAPI.findGame(req.body.id);
-			var promiseUser = userAPI.findUser(req.session.usr);
 			Promise.all([promiseGame, promiseUser]).then(function success (arr) {
 				// Catch promise values
 				var game = arr[0];

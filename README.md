@@ -140,4 +140,4 @@ Yes. If you meet the required number of points, you win immediately. This means 
 Yes. Aces and Sixes destroy all **Point Cards** and all **Face Cards and Glasses Eights**, respectively. That includes any that you have out. Try to avoid destroying many of your own cards!
 
 #### Where can I play Cuttle?
-You can play Cuttle anywhere you have a deck of cards and a friend! If you want to play online, there is only one place: [Play Cuttle!](https://cuttle-v2.herokuapp.com/)
+You can play Cuttle anywhere you have a deck of cards and a friend! If you want to play online, there is only one place: [Play Cuttle!](https://www.cuttle.cards/)

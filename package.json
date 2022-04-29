@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@sailshq/upgrade": "^1.0.9",
-    "async": "2.1.4",
+    "async": "2.6.4",
     "bluebird": "^3.4.6",
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",

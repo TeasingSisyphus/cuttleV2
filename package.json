@@ -35,7 +35,7 @@
     "sails-disk": "^2.1.1",
     "sails-hook-grunt": "^1.0.8",
     "sails-hook-orm": "^2.1.1",
-    "sails-hook-sockets": "^1.5.5",
+    "sails-hook-sockets": "^2.0.3",
     "sails-mongo": "^1.2.0",
     "sails-postgresql": "^1.0.2",
     "sails.io.js": "^0.13.8",

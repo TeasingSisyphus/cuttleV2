@@ -24,7 +24,7 @@
     "grunt-contrib-jst": "~0.6.0",
     "grunt-contrib-less": "1.0.0",
     "grunt-contrib-uglify": "~0.8.1",
-    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-watch": "~1.1.0",
     "grunt-sails-linker": "~0.10.1",
     "grunt-sync": "^0.8.2",
     "include-all": "~0.1.6",
@@ -33,13 +33,13 @@
     "rc": "^1.2.8",
     "sails": "^1.4.3",
     "sails-disk": "^2.1.1",
-    "sails-hook-grunt": "^1.0.8",
+    "sails-hook-grunt": "^5.0.0",
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^1.5.5",
     "sails-mongo": "^1.2.0",
-    "sails-postgresql": "^1.0.2",
+    "sails-postgresql": "^5.0.1",
     "sails.io.js": "^0.13.8",
-    "socket.io-client": "^1.4.8"
+    "socket.io-client": "^4.5.4"
   },
   "scripts": {
     "debug": "node debug app.js",
